@@ -11,21 +11,12 @@ import java.rmi.UnknownHostException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Login {
-	public static void main(String[] args) {
-		JFrame error = new JFrame("CoffeeChat - Error");
-		JPanel errorP = new JPanel();
-		JLabel errorL = new JLabel("Please make sure all details are filled in.");
-		JButton errorB = new JButton("OK");
-		
-		JFrame serverF = new JFrame("CoffeeChat - Server started");
-		JPanel serverP = new JPanel();
-		JButton serverB = new JButton("OK");
-		JLabel serverL;
-		
+	public static void main(String[] args) throws java.net.UnknownHostException {
 		
 		final JFrame login = new JFrame("CoffeeChat - Login");
 		JPanel panel = new JPanel();
@@ -40,22 +31,14 @@ public class Login {
 		JButton serverStart = new JButton("Start new server");
 		JTextField ipTF = new JTextField(20);
 		
-		errorP.add(errorL);
-		errorP.add(errorB);
-		error.add(errorP);
-		error.setSize(450, 100);
-		error.setVisible(false);
-		
 		panel.add(nameL);
 		panel.add(loginName);
 		panel.add(ipL);
 		panel.add(ipTF);
 		panel.add(enter);
 		panel.add(serverStart);
-		//enterP.add(enter);
 		login.setSize(500, 200);
 		login.add(panel);
-		//login.add(enterP);
 		login.setVisible(true);
 		
 		serverStart.addActionListener(new ActionListener() {
@@ -64,12 +47,8 @@ public class Login {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					ChatServer server = new ChatServer();
-					JLabel serverL = new JLabel("New server at : " + InetAddress.getLocalHost());
-					serverP.add(serverL);
-					serverP.add(serverP);
-					serverF.add(serverP);
-					serverF.setSize(450, 100);
-					serverF.setVisible(true);
+					JFrame serverF = new JFrame();
+					JOptionPane.showMessageDialog(serverF, "Your server is now running at : \n" + InetAddress.getLocalHost() + " : 5217", "CoffeeChat - New server", JOptionPane.INFORMATION_MESSAGE);
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
