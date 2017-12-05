@@ -2,7 +2,7 @@
 
 Welcome to the CoffeeChat Project!
 
-This is just a small, lightweight chat server and client. So far it only contains a few basic features, but my goal is to make it (a lot) better. Feel free to contribute by adding your own bits of code, and opening a pull request!
+This is just a small, lightweight chat server and client. So far it only contains a few basic features, but my goal is to make it a lot better. Feel free to contribute by adding your own bits of code, and opening a pull request!
 
 If you're a developer and would like to contribute your time to developing this application or extending the wiki, please let me know on by email: sidharth.kogarah@gmail.com (This is just to add you to the organisation).
 
